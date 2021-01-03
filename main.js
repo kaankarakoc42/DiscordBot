@@ -3,7 +3,7 @@ const createMessage = require('./messages')
 const ytdl = require("ytdl-core")
 const bot=new Discord.Client();
 
-const TOKEN="NzkxOTk3NTU0NjM1MzA5MDY3.X-XTMw.erU-cqZAcREE1ak7JDA40EDr67E"
+const TOKEN=process.env.TOKEN
 
 
 
