@@ -8,26 +8,36 @@ const TOKEN=process.env.TOKEN
 
 
 bot.on('ready',()=>{
-    bot.user.setActivity('Vs code  !yardım', { type: 'PLAYING' });
+    bot.user.setActivity('Vs code  !help', { type: 'PLAYING' });
     console.log("bot çalışmaya başladı.")
     bot.guilds.cache.forEach(guild=>{console.log(`starting on ${guild.name} members:${guild.memberCount}`)})    
 })
 
 bot.on("message",msg=>{
-    if(msg.content.startsWith("!test")){
+    if(msg.content.startsWith("!test") || msg.content.startsWith("!kaanbot")){
     msg.channel.send("şuan aktifim.")
     msg.channel.send(":yum:")
     }
 
-    if(msg.content.startsWith("!kaanbot")){
-    msg.channel.send("şuan aktifim.")
-    msg.channel.send(":yum:")
+    if(msg.content.startsWith("!help")){
+    msg.channel.send("!kick : !kick [kullanıcı adı] sunucudan atarım.")
+    msg.channel.send("!ban : !ban [kullanıcı adı] sunucudan banlarım.")
+    msg.channel.send("!clear : !clear [mesaj sayısı] mesajları silerim.")
+    msg.channel.send("!role-remove : !role [role adı] ve !remove [role adı] rol verip alırım.")
+    msg.channel.send("!myroles : !myroles rollerini kanala yazarım.")
+    msg.channel.send("!play-stop : !play [youtube video linki]  ve !stop youtube videosu çalarım ve durdurum.")
+    msg.channel.send("!duyuru : !duyuru [options] sunucudaki herkese dm atarım.")
+    msg.channel.send("!dm : !dm [kullanıcı adı] [options] bir kişiye dm atarım.")
+    msg.channel.send("!davet : !davet bot davet linki gönderirim.")
+    msg.channel.send("!sa : !sa selamını alırım.")
+    msg.channel.send("!ağla : !ağla [kullanıcı adı] kullanıcı kışkırtırım.")
     }
+    
     if(msg.content.startsWith("!ağla")){
     user = msg.mentions.users.first();
     msg.channel.send(`${user.username} ağla.`)
     }
-    if(msg.content.startsWith("!sa")){
+    if(msg.content.startsWith("!sa") || msg.content.startsWith("sa")){
     msg.channel.send(`ve Aleyküm selam ${msg.member.user.tag}`)
     }
     if(msg.content.startsWith("!role")){
