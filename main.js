@@ -21,7 +21,7 @@ bot.on("message",msg=>{
 
     if(msg.content.startsWith("!help")){
     text= `
-    !kick : !kick [kullanıcı adı] sunucudan atarım.
+!kick : !kick [kullanıcı adı] sunucudan atarım.
     !ban : !ban [kullanıcı adı] sunucudan banlarım.
     !clear : !clear [mesaj sayısı] mesajları silerim.
     !role-remove : !role [role adı] ve !remove [role adı] rol verip alırım.
