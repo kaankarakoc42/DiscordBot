@@ -20,17 +20,19 @@ bot.on("message",msg=>{
     }
 
     if(msg.content.startsWith("!help")){
-    msg.channel.send("!kick : !kick [kullanıcı adı] sunucudan atarım.")
-    msg.channel.send("!ban : !ban [kullanıcı adı] sunucudan banlarım.")
-    msg.channel.send("!clear : !clear [mesaj sayısı] mesajları silerim.")
-    msg.channel.send("!role-remove : !role [role adı] ve !remove [role adı] rol verip alırım.")
-    msg.channel.send("!myroles : !myroles rollerini kanala yazarım.")
-    msg.channel.send("!play-stop : !play [youtube video linki]  ve !stop youtube videosu çalarım ve durdurum.")
-    msg.channel.send("!duyuru : !duyuru [options] sunucudaki herkese dm atarım.")
-    msg.channel.send("!dm : !dm [kullanıcı adı] [options] bir kişiye dm atarım.")
-    msg.channel.send("!davet : !davet bot davet linki gönderirim.")
-    msg.channel.send("!sa : !sa selamını alırım.")
-    msg.channel.send("!ağla : !ağla [kullanıcı adı] kullanıcı kışkırtırım.")
+    text= `
+    !kick : !kick [kullanıcı adı] sunucudan atarım.
+    !ban : !ban [kullanıcı adı] sunucudan banlarım.
+    !clear : !clear [mesaj sayısı] mesajları silerim.
+    !role-remove : !role [role adı] ve !remove [role adı] rol verip alırım.
+    !myroles : !myroles rollerini kanala yazarım.
+    !play-stop : !play [youtube video linki]  ve !stop youtube videosu çalarım ve durdurum.
+    !duyuru : !duyuru [options] sunucudaki herkese dm atarım.
+    !dm : !dm [kullanıcı adı] [options] bir kişiye dm atarım.
+    !davet : !davet bot davet linki gönderirim.
+    !sa : !sa selamını alırım.
+    !ağla : !ağla [kullanıcı adı] kullanıcı kışkırtırım.`
+    msg.channel.send(text)
     }
     
     if(msg.content.startsWith("!ağla")){
