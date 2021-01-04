@@ -41,9 +41,10 @@ bot.on("message",msg=>{
     user = msg.mentions.users.first();
     msg.channel.send(`${user.username} ağla.`)
     }
-    if(msg.content.startsWith("!sa ") || msg.content.startsWith("sa ") || msg.content.startsWith("Sa ")){
+    if(msg.content.startsWith("!sa")){
     msg.channel.send(`ve Aleyküm selam ${msg.member.user.tag}`)
     }
+
     if(msg.content.startsWith("!role")){
     arg=msg.content.split(" ")[1]
     if(arg=="admin"){msg.channel.send("bu rolü alamassın."); return;}
