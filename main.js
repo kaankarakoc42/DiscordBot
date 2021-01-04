@@ -41,7 +41,7 @@ bot.on("message",msg=>{
     user = msg.mentions.users.first();
     msg.channel.send(`${user.username} ağla.`)
     }
-    if(msg.content.startsWith("!sa ") || msg.content.startsWith("sa ") || msg.content.startsWith("sa ")){
+    if(msg.content.startsWith("!sa ") || msg.content.startsWith("sa ") || msg.content.startsWith("Sa ")){
     msg.channel.send(`ve Aleyküm selam ${msg.member.user.tag}`)
     }
     if(msg.content.startsWith("!role")){
