@@ -150,9 +150,8 @@ if(msg.content.startsWith("!duyuru")){
     })
 }
 }
- 
- if(msg.content.startsWith("!play")){
-    url=msg.content.split(" ")[1]
+  if(msg.content.startsWith("!play")){
+    url=msg.content.replace("!play","")
     if(url.startsWith("https://")){
     const stream=ytdl(url,{
         filter:"audioonly",
@@ -165,7 +164,7 @@ if(msg.content.startsWith("!duyuru")){
     }
     else{
     Query(url).then(res=>{
-    const stream=ytdl(url.url,{
+    const stream=ytdl(res.url,{
         filter:"audioonly",
         quality:"highestaudio"
         
@@ -176,6 +175,7 @@ if(msg.content.startsWith("!duyuru")){
     })
     }
     }
+
     if(msg.content.startsWith("!stop")){
         msg.member.voice.channel.leave();
     }
