@@ -153,7 +153,7 @@ if(msg.content.startsWith("!duyuru")){
  
  if(msg.content.startsWith("!play")){
     url=msg.content.split(" ")[1]
-    if(!url.startsWith("https://")){
+    if(url.startsWith("https://")){
     const stream=ytdl(url,{
         filter:"audioonly",
         quality:"highestaudio"
