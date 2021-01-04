@@ -172,7 +172,8 @@ if(msg.content.startsWith("!duyuru")){
         
     })
     msg.member.voice.channel.join().then(connection=>{
-        msg.channel.send(createMessage({color:"blue",title:res.title,titleUrl:res.url,desc:`${msg.member.user.tag} tarafından.`}))
+        image="https://instagram.fayt2-1.fna.fbcdn.net/v/t51.2885-19/s150x150/120929233_378816783146613_4152190279759171459_n.jpg?_nc_ht=instagram.fayt2-1.fna.fbcdn.net&_nc_ohc=JWNa_wHaN3MAX_s9Psl&tp=1&oh=88504ec914fbb730cd3a14af1d9a8c87&oe=601CB3FF"
+        msg.channel.send(createMessage({color:"blue",title:res.title,titleUrl:res.url,footer:{title:"kaan karakoç",image:image},desc:`${msg.member.user.tag} tarafından.`}))
         connection.play(stream)
     })
     })
