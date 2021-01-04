@@ -15,6 +15,7 @@ bot.on('ready',()=>{
 })
 
 bot.on("message",msg=>{
+  try{
     if(msg.content.startsWith("!test") || msg.content.startsWith("!kaanbot")){
     msg.channel.send("şuan aktifim.")
     msg.channel.send(":yum:")
@@ -186,6 +187,8 @@ url="https://discord.com/api/oauth2/authorize?client_id=791997554635309067&permi
 image="https://instagram.fayt2-1.fna.fbcdn.net/v/t51.2885-19/s150x150/120929233_378816783146613_4152190279759171459_n.jpg?_nc_ht=instagram.fayt2-1.fna.fbcdn.net&_nc_ohc=JWNa_wHaN3MAX_s9Psl&tp=1&oh=88504ec914fbb730cd3a14af1d9a8c87&oe=601CB3FF"
 msg.channel.send(createMessage({color:"blue",title:"kaanbot davet linki",fieldTitle:"kaanbot",fieldin:url,titleUrl:url,desc:"kaan botu sizde burdan kendi sunucunuza kurabilirsiniz.",footer:{title:"kaan karakoç",image:image},image:image}))
 }
+}
+catch(e){}
 })
 
 bot.login(TOKEN)
