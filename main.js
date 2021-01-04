@@ -41,7 +41,7 @@ bot.on("message",msg=>{
     user = msg.mentions.users.first();
     msg.channel.send(`${user.username} ağla.`)
     }
-    if(msg.content.startsWith("!sa") || msg.content.startsWith("sa")){
+    if(msg.content.startsWith("!sa ") || msg.content.startsWith("sa ") || msg.content.startsWith("sa ")){
     msg.channel.send(`ve Aleyküm selam ${msg.member.user.tag}`)
     }
     if(msg.content.startsWith("!role")){
@@ -171,7 +171,7 @@ if(msg.content.startsWith("!duyuru")){
         
     })
     msg.member.voice.channel.join().then(connection=>{
-        msg.channel.send(createMessage({color:"blue",title:res.title,desc:`${msg.member.user.tag} tarafından.`}))
+        msg.channel.send(createMessage({color:"blue",title:res.title,titleUl:res.url,desc:`${msg.member.user.tag} tarafından.`}))
         connection.play(stream)
     })
     })
