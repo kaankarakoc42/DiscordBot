@@ -172,7 +172,7 @@ if(msg.content.startsWith("!duyuru")){
         
     })
     msg.member.voice.channel.join().then(connection=>{
-        msg.channel.send(createMessage({color:"blue",title:res.title,titleUl:res.url,desc:`${msg.member.user.tag} tarafından.`}))
+        msg.channel.send(createMessage({color:"blue",title:res.title,titleUrl:res.url,desc:`${msg.member.user.tag} tarafından.`}))
         connection.play(stream)
     })
     })
