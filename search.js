@@ -1,6 +1,6 @@
-require('dotenv').config();
+
 const {google} = require('googleapis');
-const { url } = require('inspector');
+
 
 function Query(query){
     param=google.youtube("v3").search.list({
@@ -18,10 +18,4 @@ function Query(query){
     return results
 }
 
-if (typeof require !== 'undefined' && require.main === module) {
-    Query("teknowar").then(res=>console.log(res))    
-}
-
-else{
-    module.exports=Query;
-}
+module.exports=Query;
