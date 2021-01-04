@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const createMessage = require('./messages')
+const Query = require('./search')
 const ytdl = require("ytdl-core")
 const bot=new Discord.Client();
 
@@ -152,6 +153,7 @@ if(msg.content.startsWith("!duyuru")){
  
  if(msg.content.startsWith("!play")){
     url=msg.content.split(" ")[1]
+    if(!url.startsWith("https://")){
     const stream=ytdl(url,{
         filter:"audioonly",
         quality:"highestaudio"
@@ -160,6 +162,19 @@ if(msg.content.startsWith("!duyuru")){
     msg.member.voice.channel.join().then(connection=>{
         connection.play(stream)
     })
+    }
+    else{
+    Query(url).then(res=>{
+    const stream=ytdl(url.url,{
+        filter:"audioonly",
+        quality:"highestaudio"
+        
+    })
+    msg.member.voice.channel.join().then(connection=>{
+        connection.play(stream)
+    })
+    })
+    }
     }
     if(msg.content.startsWith("!stop")){
         msg.member.voice.channel.leave();
