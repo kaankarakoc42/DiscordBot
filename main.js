@@ -136,7 +136,7 @@ if(msg.content.startsWith("!dm")){
    admin= msg.member.guild.roles.cache.find(role => role.name === "admin");
    moderatör= msg.member.guild.roles.cache.find(role => role.name === "moderatör");
    if(msg.member._roles.includes(admin.id) || msg.member._roles.includes(moderatör.id)){
-   options=msg.content.split(" ")[1]
+   options=msg.content.split("_")[1]
    user = msg.mentions.users.first()
    user.send(createMessage(JSON.parse(options.replace(/'/g,"\""))))
    }
@@ -145,7 +145,7 @@ if(msg.content.startsWith("!duyuru")){
     admin= msg.member.guild.roles.cache.find(role => role.name === "admin");
     moderatör= msg.member.guild.roles.cache.find(role => role.name === "moderatör");
     if(msg.member._roles.includes(admin.id) || msg.member._roles.includes(moderatör.id)){
-    options=msg.content.split(" ")[1]
+    options=msg.content.split("_")[1]
     bot.users.cache.forEach(user => {
         user.send(createMessage(JSON.parse(options).replace(/'/g,"\"")))
         console.log(user.username)
