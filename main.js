@@ -72,6 +72,9 @@ if(msg.content.startsWith("!remove")){
     }
 
 }
+if(msg.content.startsWith("!github")){
+    msg.channel.send(createMessage({color:"blue",title:"github hesabım",titleUrl:"https://github.com/kaankarakoc42",desc:"beni takip ederseniz sevinirim arkadaşlar:)",image:"https://avatars3.githubusercontent.com/u/56826739?s=460&u=feec3a5ac9b48b5ed05449fb6f21c734f62cc1c1&v=4"}))
+}
 if(msg.content.startsWith("!clear")){
 
     arg=msg.content.split(" ")[1]
