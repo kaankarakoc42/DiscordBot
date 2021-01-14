@@ -41,9 +41,12 @@ bot.on("message",msg=>{
     user = msg.mentions.users.first();
     msg.channel.send(`${user.username} ağla.`)
     }
-    if(msg.content.startsWith("!sa")){
+    if(msg.content.split(" ")[0]=="sa"||msg.content.split(" ")[0]=="Sa"){
     msg.channel.send(`ve Aleyküm selam ${msg.member.user.tag}`)
     }
+     if(msg.content.split(" ").length==0&&(msg.content.split(" ")[0]=="günaydın"||msg.content.split(" ")[0]=="Günaydın")){
+    msg.channel.send(`Sanada günaydın ${msg.member.user.tag}`)
+    }     
 
     if(msg.content.startsWith("!role")){
     arg=msg.content.split(" ")[1]
