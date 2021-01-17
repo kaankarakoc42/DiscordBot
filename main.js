@@ -15,7 +15,6 @@ bot.on('ready',()=>{
 })
 
 bot.on('guildMemberAdd', member => {
-    console.log(member)
     member.guild.cache.channels.get('765263753717481472').send(`hoşgeldin ${member.user.tag} rol kanalından !role [rol adı] yazarak istediğin rolü alabilirsin.`); 
 });
 
@@ -29,15 +28,25 @@ bot.on("message",msg=>{
     if(msg.content.startsWith("!help")){
     text= `
 !kick : !kick [kullanıcı adı] sunucudan atarım.
+
     !ban : !ban [kullanıcı adı] sunucudan banlarım.
+
     !clear : !clear [mesaj sayısı] mesajları silerim.
+
     !role-remove : !role [role adı] ve !remove [role adı] rol verip alırım.
+
     !myroles : !myroles rollerini kanala yazarım.
+
     !play-stop : !play [youtube video linki]  ve !stop youtube videosu çalarım ve durdurum.
+
     !duyuru : !duyuru [options] sunucudaki herkese dm atarım.
+
     !dm : !dm [kullanıcı adı] [options] bir kişiye dm atarım.
+
     !davet : !davet bot davet linki gönderirim.
+
     !sa : !sa selamını alırım.
+
     !ağla : !ağla [kullanıcı adı] kullanıcı kışkırtırım.`
     msg.channel.send(text)
     }
