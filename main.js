@@ -14,6 +14,10 @@ bot.on('ready',()=>{
     bot.guilds.cache.forEach(guild=>{console.log(`starting on ${guild.name} members:${guild.memberCount}`)})    
 })
 
+bot.on('guildMemberAdd', member => {
+    member.guild.channels.get('765263753717481472').send(`hoşgeldin ${member.user.tag} rol kanalından !role [rol adı] yazarak istediğin rolü alabilirsin.`); 
+});
+
 bot.on("message",msg=>{
   try{
     if(msg.content.startsWith("!test") || msg.content.startsWith("!kaanbot")){
@@ -44,7 +48,7 @@ bot.on("message",msg=>{
     if(msg.content.split(" ")[0]=="sa"||msg.content.split(" ")[0]=="Sa"){
     msg.channel.send(`ve Aleyküm selam ${msg.member.user.tag}`)
     }
-     if(msg.content.split(" ").length==0&&(msg.content.split(" ")[0]=="günaydın"||msg.content.split(" ")[0]=="Günaydın")){
+    if(msg.content.split(" ").length==1&&(msg.content.split(" ")[0]=="günaydın"||msg.content.split(" ")[0]=="Günaydın")){
     msg.channel.send(`Sanada günaydın ${msg.member.user.tag}`)
     }     
 
