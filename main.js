@@ -15,7 +15,8 @@ bot.on('ready',()=>{
 })
 
 bot.on('guildMemberAdd', member => {
-    member.guild.channels.get('765263753717481472').send(`hoşgeldin ${member.user.tag} rol kanalından !role [rol adı] yazarak istediğin rolü alabilirsin.`); 
+    console.log(member)
+    member.guild.cache.channels.get('765263753717481472').send(`hoşgeldin ${member.user.tag} rol kanalından !role [rol adı] yazarak istediğin rolü alabilirsin.`); 
 });
 
 bot.on("message",msg=>{
